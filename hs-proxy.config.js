@@ -4,7 +4,7 @@ var apiHost = 'http://qamaster.eng.hotschedules.com/';
 //var apiHost = 'http://qareleased.eng.hotschedules.com/';
 //var apiHost = 'http://beta2.hotschedules.com/';
 var staticHost = 'http://localhost:8080/';
-var staticOldRedirectHost = 'http://localhost:5000';
+var staticOldRedirectHost = 'http://localhost:5001';
 var staticRedirectHost = 'http://localhost:6500';
 var dist16RedirectHost = 'http://localhost:6501';
 
