@@ -35,6 +35,10 @@ module.exports = {
                     to: 'backbone/scheduling/config.development.js'
                 },
                 {
+                    from: 'templates/green/js/exceptionsReport.min.js',
+                    to: 'backbone/exceptionsReport/config.development.js'
+                },
+                {
                     from: 'templates/green/js/rosterReport.min.js',
                     to: 'backbone/report/config.development.js'
                 },
