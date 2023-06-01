@@ -1,13 +1,15 @@
 var i18Host = 'http://localhost:6060';
 //var apiHost = 'http://216.166.0.49/'; //df-testserver4
 var apiHost = 'http://qamaster.eng.hotschedules.com/';
+//var apiHost = 'http://qamultiserver2.eng.hotschedules.com/';
 //var apiHost = 'http://qareleased.eng.hotschedules.com/';
-//var apiHost = 'http://beta2.hotschedules.com/';
+// var apiHost = 'http://beta2.hotschedules.com/';
 var staticHost = 'http://localhost:8080/';
 var staticOldRedirectHost = 'http://localhost:5000';
 var staticLogbookRedirectHost = 'http://localhost:5001';
 var staticRedirectHost = 'http://localhost:6500';
 var dist16RedirectHost = 'http://localhost:6501';
+var schedulingRedirectHost = 'http://localhost:6505';
 
 var bundleHashesToDevReplace = [
     '/',
@@ -30,16 +32,20 @@ module.exports = {
                     replace: '/',
                     to: staticRedirectHost
                 },
-                {
-                    from: 'templates/green/js/scheduling.min.js',
-                    to: 'backbone/scheduling/config.development.js'
-                },
+                // {
+                //     from: 'templates/green/js/scheduling.min.js',
+                //     to: 'backbone/scheduling/config.development.js'
+                // },
                 {
                     from: 'templates/green/js/exceptionsReport.min.js',
                     to: 'backbone/exceptionsReport/config.development.js'
                 },
                 {
                     from: 'templates/green/js/rosterReport.min.js',
+                    to: 'backbone/report/config.development.js'
+                },
+                {
+                    from: 'templates/green/js/exceptionsReport.min.js',
                     to: 'backbone/report/config.development.js'
                 },
                 {
@@ -99,6 +105,17 @@ module.exports = {
                     to: staticLogbookRedirectHost
                 },
                 {
+                    from: '/templates/green/js/scheduling/.*[.js|.css|.json|.woff2|.woff|.ttf]',
+                    replace: [
+                        '/',
+                        {
+                            from: new RegExp('scheduling.min[.]{1,}[.]js'),
+                            to: 'scheduling.dev.js'
+                        }
+                    ],
+                    to: schedulingRedirectHost
+                },
+                {
                     from: '/apps/dist/punch-records/.*[.js|.css|.json|.woff2|.woff|.ttf]',
                     replace: bundleHashesToDevReplace,
                     to: staticOldRedirectHost
@@ -118,3 +135,4 @@ module.exports = {
         }
     }
 };
+
