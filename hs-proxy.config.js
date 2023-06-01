@@ -109,7 +109,7 @@ module.exports = {
                     replace: [
                         '/',
                         {
-                            from: new RegExp('scheduling.min[.]{1,}[.]js'),
+                            from: new RegExp('scheduling.min[.].{1,}[.]js'),
                             to: 'scheduling.dev.js'
                         }
                     ],
