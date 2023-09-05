@@ -33,10 +33,10 @@ module.exports = {
                     replace: '/',
                     to: staticRedirectHost
                 },
-                {
-                    from: 'templates/green/js/scheduling.min.js',
-                    to: 'backbone/scheduling/config.development.js'
-                },
+                // {
+                //     from: 'templates/green/js/scheduling.min.js',
+                //     to: 'backbone/scheduling/config.development.js'
+                // },
                 {
                     from: 'templates/green/js/exceptionsReport.min.js',
                     to: 'backbone/exceptionsReport/config.development.js'
@@ -105,17 +105,17 @@ module.exports = {
                     replace: bundleHashesToDevReplace,
                     to: staticLogbookRedirectHost
                 },
-                // {
-                //     from: '/templates/green/js/scheduling/.*[.js|.css|.json|.woff2|.woff|.ttf]',
-                //     replace: [
-                //         '/',
-                //         {
-                //             from: new RegExp('scheduling.min[.].{1,}[.]js'),
-                //             to: 'scheduling.dev.js'
-                //         }
-                //     ],
-                //     to: schedulingRedirectHost
-                // },
+                {
+                    from: '/templates/green/js/scheduling/.*[.js|.css|.json|.woff2|.woff|.ttf]',
+                    replace: [
+                        '/',
+                        {
+                            from: new RegExp('scheduling.min[.].{1,}[.]js'),
+                            to: 'scheduling.dev.js'
+                        }
+                    ],
+                    to: schedulingRedirectHost
+                },
                 {
                     from: '/apps/dist/punch-records/.*[.js|.css|.json|.woff2|.woff|.ttf]',
                     replace: bundleHashesToDevReplace,
