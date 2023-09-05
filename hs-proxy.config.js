@@ -3,6 +3,7 @@ var i18Host = 'http://localhost:6060';
 var apiHost = 'http://qamaster.eng.hotschedules.com/';
 //var apiHost = 'http://qamultiserver2.eng.hotschedules.com/';
 //var apiHost = 'http://qareleased.eng.hotschedules.com/';
+//var apiHost = 'http://app10.eng.hotschedules.com/';
 // var apiHost = 'http://beta2.hotschedules.com/';
 var staticHost = 'http://localhost:8080/';
 var staticOldRedirectHost = 'http://localhost:5000';
@@ -63,7 +64,7 @@ module.exports = {
                 {
                     from: 'startup-page.min.js',
                     to: 'login/config.js'
-                },                
+                },
                 {
                     from: '.*update.js$',
                     replace: '/',
@@ -135,4 +136,3 @@ module.exports = {
         }
     }
 };
-
