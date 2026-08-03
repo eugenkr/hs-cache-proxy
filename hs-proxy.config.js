@@ -1,10 +1,10 @@
 var i18Host = 'http://localhost:6060';
 //var apiHost = 'http://216.166.0.49/'; //df-testserver4
-var apiHost = 'http://qamaster.eng.hotschedules.com/';
-//var apiHost = 'http://qamultiserver2.eng.hotschedules.com/';
-//var apiHost = 'http://qareleased.eng.hotschedules.com/';
-//var apiHost = 'http://app10.eng.hotschedules.com/';
-// var apiHost = 'http://beta2.hotschedules.com/';
+var apiHost = 'https://qamaster.hotschedules.com/';
+//var apiHost = 'https://qamultiserver2.hotschedules.com/';
+// var apiHost = 'https://qareleased.hotschedules.com/';
+//var apiHost = 'https://app10.hotschedules.com/';
+// var apiHost = 'https://beta2.hotschedules.com/';
 var staticHost = 'http://localhost:8080/';
 var staticOldRedirectHost = 'http://localhost:5000';
 var staticLogbookRedirectHost = 'http://localhost:5001';
@@ -86,7 +86,7 @@ module.exports = {
                     replace: bundleHashesToDevReplace,
                 },
                 {
-                    from: "/apps/dist16.*[.js|.css|.json|.woff2|.woff|.ttf]",
+                    from: "/apps/dist16/modules/.*[.js|.css|.json|.woff2|.woff|.ttf]",
                     replace: bundleHashesToDevReplace,
                     to: dist16RedirectHost
                 },

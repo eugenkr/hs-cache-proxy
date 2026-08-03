@@ -68,7 +68,8 @@ function proxyRequest(req, res) {
         console.log('proxy dynamic', req.url, '<=>', config.proxy.dynamic.target + pathName);
 
         dynamicProxy.web(req, res, {
-            target: config.proxy.dynamic.target
+            target: config.proxy.dynamic.target,
+            changeOrigin: true
         });
     }
 }
